@@ -2,7 +2,7 @@ import { FC } from "react";
 import UseHomeModel from "./model/useHomeModel";
 
 const Home: FC = () => {
-  const { user, loading } = UseHomeModel();
+  const { user, loading, setFilters } = UseHomeModel();
 
   return (
     <div
@@ -22,6 +22,9 @@ const Home: FC = () => {
         <>
           <p>User : {user.title}</p>
           <p>Completed: {user.completed ? "Yes" : "No"}</p>
+          <button onClick={() => setFilters((prev) => prev + 1)}>
+            Fetch another user
+          </button>
         </>
       )}
     </div>
