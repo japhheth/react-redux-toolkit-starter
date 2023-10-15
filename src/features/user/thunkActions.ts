@@ -11,7 +11,6 @@ export const sampleAPICall = createAsyncThunk(
       .then((response) => response.json())
       .then((data) => data)
       .catch((err) => {
-        console.error(err);
         rejectWithValue(err);
       });
   }
